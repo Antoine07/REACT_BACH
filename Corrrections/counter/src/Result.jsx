@@ -1,12 +1,12 @@
 import './App.css'
 import {  useSelector } from 'react-redux'
 
-function Result({count, action}) {
-//   const {} = useSelector();
+function Result() {
+ const { count } = useSelector(state => state.counter);
 
   return (
         <div>
-            Resultat : LE NOMBRE FOIS QUE L'ON A CLIQUE SUR UN COMPTEUR
+            Nombre de clicks : {count}
         </div>
   )
 }

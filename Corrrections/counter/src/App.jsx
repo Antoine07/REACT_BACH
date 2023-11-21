@@ -2,6 +2,7 @@ import './App.css'
 import About from './About'
 import { useDispatch, useSelector } from 'react-redux'
 import {increment} from './store/counter'
+import Result from './Result';
  
 function App() {
   // envoyer les actions qui se déclencheront dans le reducers
@@ -28,6 +29,7 @@ function App() {
         </button>
       </div>
       <About count={num} action={ () => dispatch(increment(70) ) } />
+      <Result />
     </>
   )
 }
