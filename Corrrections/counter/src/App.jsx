@@ -2,10 +2,16 @@ import { useState } from 'react'
 
 import './App.css'
 import About from './About'
-
+import {increment} from './store/counter'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  increment(7)
+
+  /**
+   * On déclenche le counter du createSlice en faisant increment(7) où 7 c'est le step le payload
+   */
 
   return (
     <>
@@ -19,9 +25,6 @@ function App() {
         </button>
       </div>
       <About count={count} action={ () => setCount((count) => count + 1) } />
-      <About count={count} />
-      <About count={count} />
-      <About count={count} />
     </>
   )
 }
