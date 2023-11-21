@@ -7,7 +7,7 @@ function App() {
   // envoyer les actions qui se déclencheront dans le reducers
   const dispatch = useDispatch();
   // lire les donnnées dans le store dans un des createSlice 
-  const { num } = useSelector(state => state.counter )
+  const { num, step } = useSelector(state => state.counter )
 
   // console.log(num)
 
@@ -21,6 +21,7 @@ function App() {
         App 
       </div>
       <h1>Vite + React</h1>
+      <p>Le step est : {step} </p>
       <div className="card">
         <button onClick={() => dispatch(increment(7))}>
           count is {num}

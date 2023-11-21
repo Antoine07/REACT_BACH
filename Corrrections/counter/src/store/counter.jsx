@@ -4,7 +4,9 @@ import { createSlice, configureStore } from "@reduxjs/toolkit"
 
 // On utilise un store SOURCE DE VERITE
 const initialState = {
-    num : 110
+    num : 110, 
+    step : 7, 
+    count : 0
 }
 
 console.log(initialState)
@@ -17,9 +19,11 @@ const sliceCounter = createSlice({
         // LES ACTIONS
         increment : (state, action) => {
             const step = action.payload
+            state.step = step 
             state.num += step 
+            state.count += 1
         },
-        incrementModulo : (state, action) => {
+        decrement : (state, action) => {
 
         }
     }
