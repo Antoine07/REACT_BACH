@@ -102,7 +102,7 @@ Reprendre l'exercice du cours et faire le reducer qui décrémente le résultat 
 
 2. Créez un compteur alétoire. Lorsqu'on clique sur le bouton d'incrémente aléatoire on avance d'un nombre alétoire par rapport au précédent nombre.
 
-
+3. Mettre le bouton inactif si on ne peut plus décrémenter.
 
 ### 03 Exercice counter synchrone
 
