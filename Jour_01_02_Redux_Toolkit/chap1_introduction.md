@@ -100,7 +100,7 @@ Reprendre l'exercice du cours et faire le reducer qui décrémente le résultat 
 
 1. Lorsqu'on ne peut pas décrémenter, on affiche un message d'avertissement en laissant la dernière valeur au compteur. Le message d'avertissement sera géré dans le store de votre Redux.
 
-2. Créez un compteur alétoire.
+2. Créez un compteur alétoire. Lorsqu'on clique sur le bouton d'incrémente aléatoire on avance d'un nombre alétoire par rapport au précédent nombre.
 
 
 
