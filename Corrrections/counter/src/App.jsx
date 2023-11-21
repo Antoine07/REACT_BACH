@@ -1,13 +1,15 @@
-import { useState } from 'react'
-
 import './App.css'
 import About from './About'
+import { useDispatch, useSelector } from 'react-redux'
 import {increment} from './store/counter'
-
+ 
 function App() {
-  const [count, setCount] = useState(0)
+  // envoyer les actions qui se déclencheront dans le reducers
+  const dispatch = useDispatch();
+  // lire les donnnées dans le store dans un des createSlice 
+  const { num } = useSelector(state => state.counter )
 
-  increment(7)
+  // console.log(num)
 
   /**
    * On déclenche le counter du createSlice en faisant increment(7) où 7 c'est le step le payload
@@ -20,11 +22,11 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={() => dispatch(increment(7))}>
+          count is {num}
         </button>
       </div>
-      <About count={count} action={ () => setCount((count) => count + 1) } />
+      <About count={num} action={ () => dispatch(increment(70) ) } />
     </>
   )
 }

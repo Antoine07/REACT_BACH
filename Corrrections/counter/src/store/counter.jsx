@@ -1,10 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, configureStore } from "@reduxjs/toolkit"
 
 // Un compteur avec un step dynamique
 
 // On utilise un store SOURCE DE VERITE
 const initialState = {
-    num : 0
+    num : 110
 }
 
 console.log(initialState)
@@ -14,7 +14,7 @@ const sliceCounter = createSlice({
     name : "counter",
     initialState,
     reducers : {
-        // increment(7)
+        // LES ACTIONS
         increment : (state, action) => {
             const step = action.payload
             state.num += step 
@@ -25,5 +25,12 @@ const sliceCounter = createSlice({
     }
 })
 
-// export une action dans l'ensemble des actions du createSlice 
+// EXPORT DES ACTIONS
 export const { increment } = sliceCounter.actions
+
+// CONFIGURATION GLOBALE POUR REACT 
+export default configureStore({
+    reducer :{
+        counter : sliceCounter.reducer
+    }
+})
