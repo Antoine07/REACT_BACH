@@ -16,6 +16,29 @@ Puis pour installer un nouveau projet React on ajoute le nom de l'application et
 npm create vite@latest counter --template react
 ```
 
+Installation de reduxtoolkit qui est un redux avec des outils pratiques en surcouche.
+
+Permet de gérer les states globaux d'une application facilement. 
+
+```bash
+npm install react-redux
+npm install @reduxjs/toolkit
+```
+
+- reduxtoolkit des outils avec redux
+- react-redux permet d'utiliser reduxtoolkit dans React pour lire et dispatcher (envoyer) les données dans Redux 
+
+On utilisera le useDispatch et le useSelector respectivement pour 
+
+**useDispatch** => déclencher les actions dans Redux ( par exemple déclencher le counter )
+**useSelector** => lire les données dans le store ( lire le résultat ou les données dans le store )
+
+1. Créez un createSlice avec son initiale state + les reducers ou actions
+
+2. On contextualise le configureStore une fois à la racine de React
+
+3. On utilise la librairie react-redux pour dispatcher et lire les données dans Redux 
+
 ## createSlice gestion du state
 
 C'est une fonction, createSlice, qui accepte un état initial, et qui gère des créateurs d'action, permet de découper le state en plus petites parties autonomes.
@@ -63,7 +86,15 @@ import { increment } from './store/valueSlice';
 // ...
 ```
 
-### 01 Exercice counter synchrone
+### 01 Exercice
+
+Reprendre l'exercice du cours et faire le reducer qui décrémente le résultat du compteur.
+
+1. Faites une décrémentation de -1
+
+2. Faites une décrémentation de la valeur du dernier compteur utiliser.
+
+### 02 Exercice counter synchrone
 
 Rappelons que Redux gère les actions de manière synchrone.
 
