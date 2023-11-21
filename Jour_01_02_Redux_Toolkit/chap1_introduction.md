@@ -94,7 +94,17 @@ Reprendre l'exercice du cours et faire le reducer qui décrémente le résultat 
 
 2. Faites une décrémentation de la valeur du dernier compteur utiliser.
 
-### 02 Exercice counter synchrone
+### 02 Exercice
+
+Reprendre l'exercice du cours et faire le reducer qui décrémente le résultat du compteur.
+
+1. Lorsqu'on ne peut pas décrémenter, on affiche un message d'avertissement en laissant la dernière valeur au compteur. Le message d'avertissement sera géré dans le store de votre Redux.
+
+2. Créez un compteur alétoire.
+
+
+
+### 03 Exercice counter synchrone
 
 Rappelons que Redux gère les actions de manière synchrone.
 

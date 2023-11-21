@@ -7,7 +7,7 @@ const initialState = {
     num : 110, 
     step : 7, 
     count : 0,
-    message : ''
+    message : '' // les messages d'erreur à gérer 
 }
 
 console.log(initialState)
