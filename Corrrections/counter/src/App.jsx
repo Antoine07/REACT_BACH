@@ -1,7 +1,7 @@
 import './App.css'
 import About from './About'
 import { useDispatch, useSelector } from 'react-redux'
-import {increment} from './store/counter'
+import {increment, decrement, decrementSimple} from './store/counter'
 import Result from './Result';
  
 function App() {
@@ -26,6 +26,12 @@ function App() {
       <div className="card">
         <button onClick={() => dispatch(increment(7))}>
           count is {num}
+        </button>
+        <button onClick={() => dispatch(decrementSimple())}>
+          Decrement simple
+        </button>
+        <button onClick={() => dispatch(decrement())}>
+          Decrement with step
         </button>
       </div>
       <About count={num} action={ () => dispatch(increment(70) ) } />
