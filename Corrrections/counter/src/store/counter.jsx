@@ -21,14 +21,12 @@ const sliceCounter = createSlice({
     reducers : {
         // LES ACTIONS
         increment : (state, action) => {
-            state.message = '';
             const step = action.payload
             state.step = step 
             state.num += step 
             state.count += 1
         },
         decrementSimple : (state, action) => {
-            state.message = '';
             // on vérifie que l'on peut avant retirer le step au nombre sinon on laisse la dernière valeur pour le compteur
             if ( state.num  - 1 < 0 ) 
             {
@@ -40,7 +38,6 @@ const sliceCounter = createSlice({
 
         },
         decrement : (state, action) => {
-            state.message = '';
             if ( state.num  - state.step < 0 ) 
             {
                 state.message = "Attention vous ne pouvez plus décrémenter";
@@ -50,21 +47,25 @@ const sliceCounter = createSlice({
             state.num =  state.num -1 * state.step 
         },
         incrementAlea : (state) => {
-            state.message = '';
             const step = Math.floor( Math.random()*MAX_VAL_RANDOM )
             state.step = step 
             state.num += step 
             state.count += 1
+        },
+        setStep : ( state, action) =>{
+            state.step = action.payload
         }
     }
 })
 
+
 // EXPORT DES ACTIONS
-export const { increment, decrementSimple, decrement, incrementAlea } = sliceCounter.actions
+export const { increment, decrementSimple, decrement, incrementAlea, setStep } = sliceCounter.actions
 
 // CONFIGURATION GLOBALE POUR REACT 
 export default configureStore({
     reducer :{
         counter : sliceCounter.reducer
     }
+    
 })

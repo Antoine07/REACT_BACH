@@ -106,7 +106,15 @@ Reprendre l'exercice du cours et faire le reducer qui décrémente le résultat 
 
 4. Ajoutez un champ pour définir le step de manière dynamique.
 
-### 03 Exercice counter synchrone
+### 03 Exercice nouveau form compteur 
+
+1. Créez un projet reduxtoolkit counterBis.
+
+2. Créez un formulaire avec deux champs un champ pour saisir une valeur de compteur et un champ pour déterminer le step de votre compteur.
+
+Pensez à créez également deux boutons un pour incrémenter et un autre pour décrémenter.
+
+### 04 Exercice counter synchrone
 
 Rappelons que Redux gère les actions de manière synchrone.
 
@@ -173,7 +181,7 @@ const usersSlice = createSlice({
 })
 ```
 
-### 02 Exercice counter asynchrone
+### 05 Exercice counter asynchrone
 
 Reprendre l'exercice précédent sur le counter dans la partie TP
 
@@ -184,7 +192,7 @@ Reprendre l'exercice précédent sur le counter dans la partie TP
 3. Maintenant le délai du compteur est de 500ms; ajoutez à ce compteur la fonctionnalité suivante : si la valeur du compteur dépasse 10 on incrémente de +2. Et si on atteind 20 on rend inactif le bouton.
 
 
-### 03 Exercice middleware 
+### 06 Exercice middleware 
 
 Nous allons afficher une liste incrémentable d'étoiles dans le component principal; pour chaque incrémentation d'une valeur aléatoire pair ou impair, on affichera une étoile. Cette liste "graphique" sera placée sous les valeurs affichées par notre compteur précédent, voyez le wireframe ci-après.
 

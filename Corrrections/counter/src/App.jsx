@@ -1,8 +1,10 @@
 import './App.css'
 import About from './About'
 import { useDispatch, useSelector } from 'react-redux'
-import {increment, decrement, decrementSimple, incrementAlea} from './store/counter'
+import {increment, decrement, decrementSimple, incrementAlea, setStep} from './store/counter'
 import Result from './Result';
+import { useState } from 'react';
+import FormStep from './FormStep';
  
 function App() {
   // envoyer les actions qui se déclencheront dans le reducers
@@ -10,16 +12,6 @@ function App() {
   // lire les donnnées dans le store dans un des createSlice 
   const { num, step, message } = useSelector(state => state.counter )
 
-  const handleSubmit = (e) =>{
-    e.preventDefault()
-    console.log(e)
-  }
-
-  const handleStep = (e) => {
-
-    // TODO avec le createSlice 
-
-  }
 
   // console.log(num)
 
@@ -31,10 +23,7 @@ function App() {
     <>
       <div>
         App 
-        <form onSubmit={handleSubmit}>
-          <p>Step to increment : <input type="text" onChange={handleStep}/></p>
-          <button type="submit">Ok</button>
-        </form>
+        <FormStep />
       </div>
       { message && (
         <p className="alert">{message}</p>
@@ -42,21 +31,24 @@ function App() {
       <h1>Vite + React</h1>
       <p>Le step est : {step} </p>
       <div className="card">
-        <button onClick={() => dispatch(increment(7))}>
-          count + 7 {num}
-        </button>
-        <button disabled={num <= 0} onClick={() => dispatch(decrementSimple())}>
-          Decrement simple
-        </button>
-        <button disabled={step > num} onClick={() => dispatch(decrement())}>
-          Decrement with step 
+        <button onClick={() => dispatch(increment(step))}>
+          increment + {step}
         </button>
         <button onClick={() => dispatch(incrementAlea())}>
           Increment alea
         </button>
       </div>
-      <About count={num} action={ () => dispatch(increment(70) ) } />
-      <Result />
+      <div className="card">
+        <button  onClick={() => dispatch(decrementSimple())}>
+          Decrement simple
+        </button>
+        <button  onClick={() => dispatch(decrement())}>
+          Decrement with {step} 
+        </button>
+       
+      </div>
+      {/* <About count={num} action={ () => dispatch(increment(70) ) } />
+      <Result /> */}
     </>
   )
 }
