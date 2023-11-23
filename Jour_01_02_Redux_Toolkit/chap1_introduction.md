@@ -104,6 +104,8 @@ Reprendre l'exercice du cours et faire le reducer qui décrémente le résultat 
 
 3. Mettre le bouton inactif si on ne peut plus décrémenter.
 
+4. Ajoutez un champ pour définir le step de manière dynamique.
+
 ### 03 Exercice counter synchrone
 
 Rappelons que Redux gère les actions de manière synchrone.
